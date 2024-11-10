@@ -34,10 +34,10 @@ class DataLoadPreprocess(Dataset):
 
         if mode == 'train':
             self.data_path = base_path  # Path to training images and depths
-            self.filenames_file = os.path.join(base_path, 'nyudepthv2_train_files_with_gt.txt')  # Path to your train.txt file
+            self.filenames_file = os.path.join(base_path, 'nyudepthv2_train_files_with_gt.txt')  # Path train.txt file
         else:
             self.data_path = base_path  # Path to test images and depths
-            self.filenames_file = os.path.join(base_path, 'nyudepthv2_test_files_with_gt.txt')  # Path to your test.txt file
+            self.filenames_file = os.path.join(base_path, 'nyudepthv2_test_files_with_gt.txt')  # Path  test.txt file
 
         # Read the list of filenames
         with open(self.filenames_file, 'r') as f:
