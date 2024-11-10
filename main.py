@@ -50,7 +50,7 @@ class BaseTrainer:
             # outputs: [batch_size, 1, H, W]
             # depths: [batch_size, 1, H, W]
 
-            # Kiểm tra và điều chỉnh kích thước của outputs nếu cần
+            # Kiểm tra và điều chỉnh kích thước của outputs
             if outputs.shape[2:] != depths.shape[2:]:
                 outputs = F.interpolate(outputs, size=depths.shape[2:], mode='bilinear', align_corners=True)
 
@@ -93,7 +93,7 @@ class BaseTrainer:
                 segmentations = None
 
             outputs, seg_output = self.model(images)
-            # Kiểm tra và điều chỉnh kích thước của outputs nếu cần
+            # Kiểm tra và điều chỉnh kích thước của outputs
             if outputs.shape[2:] != depths.shape[2:]:
                 outputs = F.interpolate(outputs, size=depths.shape[2:], mode='bilinear', align_corners=True)
 
